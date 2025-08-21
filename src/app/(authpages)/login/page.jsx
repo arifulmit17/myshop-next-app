@@ -7,13 +7,13 @@ export default function LoginPage() {
     <div className="flex flex-col items-center justify-center h-screen">
       <h1 className="text-2xl mb-6">Login</h1>
 
-      {/* Google Login */}
+      {/* Google Login
       <button
         className="px-4 py-2 bg-blue-500 text-white rounded"
-        onClick={() => signIn("google", { callbackUrl: "/products" })}
+        onClick={() => signIn("google", { callbackUrl: "/" })}
       >
         Sign in with Google
-      </button>
+      </button> */}
 
       {/* Credential Login */}
       <form
