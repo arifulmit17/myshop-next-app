@@ -9,7 +9,7 @@ export default function Navbar() {
     <Link href={'/products'}>
     <li className='mx-10'>Products</li>
     </Link>
-    <Link href={'/add-product'}>
+    <Link href={'/dashboard/add-product'}>
     <li className='mx-10'>Add Products</li>
     </Link>
     <Link className='mx-10' href={'login'}>

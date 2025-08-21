@@ -2,7 +2,7 @@ import NextAuth from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 import CredentialsProvider from "next-auth/providers/credentials";
 
-const handler = NextAuth({
+export const authOptions = {
 //   providers: [
 //     // ✅ Google OAuth
 //     GoogleProvider({
@@ -49,7 +49,7 @@ providers: [
       password: { label: "Password", type: "password" }
     },
     async authorize(credentials, req) {
-        console.log(credentials);
+
       // Add logic here to look up the user from the credentials supplied
       const user = { id: "1", name: "J Smith", email: "jsmith@example.com" }
 
@@ -64,7 +64,15 @@ providers: [
       }
     }
   })
-]
-});
+],
+pages: {
+    signIn: "/login", // Custom login page
+  },
+  session: {
+    strategy: "jwt",
+  },
+  secret: process.env.NEXTAUTH_SECRET,
+};
+const handler = NextAuth(authOptions);
 
 export { handler as GET, handler as POST };
