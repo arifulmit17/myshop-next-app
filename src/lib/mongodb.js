@@ -1,7 +1,7 @@
 // lib/mongodb.js
 import { MongoClient } from "mongodb";
 
-const uri = process.env.MONGODB_URI; // e.g. "mongodb+srv://user:pass@cluster0.mongodb.net"
+const uri = process.env.MONGODB_URI;
 const options = {};
 
 let client;
