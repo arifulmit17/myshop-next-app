@@ -11,23 +11,32 @@ Setup and installation:
 5. vercel --prod for deployment
 
 Route summery:
-Route (app)                         Size  First Load JS    
-┌ ○ /                            5.23 kB         132 kB
-├ ○ /_not-found                      0 B         127 kB
-├ ƒ /api/auth/[...nextauth]          0 B            0 B
-├ ƒ /api/products                    0 B            0 B
-├ ƒ /dashboard                       0 B         127 kB
-├ ○ /dashboard/add-product         743 B         128 kB
-├ ○ /login                         529 B         128 kB
-├ ○ /products                        0 B         127 kB
-└ ƒ /products/[id]                   0 B         127 kB
-+ First Load JS shared by all     139 kB
-  ├ chunks/47a465164401cb79.js   17.1 kB
-  ├ chunks/569f8ca39997ccda.js   21.7 kB
-  ├ chunks/6e584c2edc767513.js   12.9 kB
-  ├ chunks/811c82e360775988.js   59.2 kB
-  ├ chunks/16587a8c4b39e359.css  11.6 kB
-  └ other shared chunks (total)  16.9 kB
+Pages
+•	/ → Landing Page
+o	Contains Navbar, Hero, Product Highlights, and Footer.
+o	Links to /login and /products.
+o	Public.
+•	/login → Login Page with NextAuth
+o	Supports Google or credential login.
+o	Redirects to /products on success.
+o	Public.
+•	/products → Product List Page
+o	Shows product list (name, price, description, details button).
+o	Data fetched from a mock backend or MongoDB.
+o	Public.
+•	/products/[id] → Product Details Page
+o	Shows full details of a single product.
+o	Dynamic route (id).
+o	Public.
+•	/dashboard/add-product → Add Product Page
+o	Protected (requires login).
+o	Form to add new product into MongoDB.
+o	Redirects unauthenticated users to /login.
+API Routes (under /app/api/)
+•	/api/auth/[...nextauth] → NextAuth handler
+o	Handles authentication (Credentials login).
+•	/api/products → Products API
+o	POST → add new product to MongoDB.
 
 
 ○  (Static)   prerendered as static content
