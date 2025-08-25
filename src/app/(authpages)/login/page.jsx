@@ -2,6 +2,12 @@
 
 import { signIn } from "next-auth/react";
 
+const handleSeed = async () => {
+  const res = await fetch("/api/seed-users", { method: "POST" });
+  const data = await res.json();
+  console.log(data);
+};
+
 export default function LoginPage() {
   return (
     <div className="flex flex-col items-center justify-center h-screen">
@@ -40,6 +46,7 @@ export default function LoginPage() {
         <br></br>
         <button className="px-4 py-2 btn btn-primary text-white rounded">Login</button>
       </form>
+      
     </div>
   );
 }

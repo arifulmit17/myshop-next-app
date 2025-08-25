@@ -16,3 +16,16 @@ export async function POST(req) {
     });
   }
 }
+
+export async function GET() {
+  try {
+    const client = await clientPromise;
+    const db = client.db("myshop");
+    const products = await db.collection("products").find({}).toArray();
+
+    return Response.json(products);
+  } catch (error) {
+    return Response.json({ error: "Failed to fetch products" }, { status: 500 });
+  }
+}
+

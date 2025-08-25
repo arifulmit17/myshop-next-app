@@ -1,6 +1,7 @@
 import NextAuth from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 import CredentialsProvider from "next-auth/providers/credentials";
+import clientPromise from "@/lib/mongodb";
 
 export const authOptions = {
 //   providers: [
@@ -50,9 +51,13 @@ providers: [
       password: { label: "Password", type: "password" }
     },
     async authorize(credentials, req) {
-       const {name,email}=credentials
+       const client = await clientPromise;
+        const db = client.db("myshop"); // replace with your DB name
+
+        const user = await db.collection("users").findOne({ email: credentials.email });
+        console.log(user);
       // Add logic here to look up the user from the credentials supplied
-      const user = { id: "1", name: name, email: email }
+      
 
       if (user) {
         // Any object returned will be saved in `user` property of the JWT

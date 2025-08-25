@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
+import LogoutButton from './LogoutButton'
 
 export default function Navbar() {
     const links=<>
@@ -12,7 +13,7 @@ export default function Navbar() {
     <Link href={'/dashboard/add-product'}>
     <li className='mx-10'>Add Products</li>
     </Link>
-    <Link className='mx-10' href={'login'}>
+    <Link className='mx-10' href={'/login'}>
     <li>Login</li>
     </Link>
     
@@ -20,7 +21,7 @@ export default function Navbar() {
     </>
   return (
     <div>
-        <div className="navbar bg-base-100 shadow-sm">
+        <div className="navbar text-primary bg-base-300 sticky top-0 z-[100] shadow-sm">
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -32,7 +33,7 @@ export default function Navbar() {
         {links}
       </ul>
     </div>
-    <a className="btn btn-ghost text-xl">My-shop</a>
+    <a className="btn btn-ghost text-primary text-xl">My-shop</a>
   </div>
   <div className="navbar-center hidden lg:flex gap-5">
     <ul className="menu menu-horizontal px-1 ">
@@ -40,7 +41,8 @@ export default function Navbar() {
     </ul>
   </div>
   <div className="navbar-end">
-    <a className="btn">Button</a>
+    <input type="checkbox" value="night" className="toggle mr-5 theme-controller" />
+    <LogoutButton></LogoutButton>
   </div>
 </div>
     </div>

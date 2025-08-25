@@ -33,7 +33,7 @@ export default function Formproduct() {
     }
   };
   return (
-    <div className="max-w-md mx-auto p-6 bg-white rounded-xl shadow-lg">
+    <div className="max-w-md mx-auto p-6 bg-primary/10 text-base-content rounded-xl shadow-lg">
       <h1 className="text-2xl font-bold mb-4">Add Product</h1>
       <form onSubmit={handleSubmit} className="space-y-4">
         <input
@@ -68,7 +68,7 @@ export default function Formproduct() {
           placeholder="Image URL"
           className="input input-bordered w-full"
         />
-        <button type="submit" className="btn btn-secondary w-full">
+        <button type="submit" className="btn bg-primary/10 w-full">
           Add Product
         </button>
       </form>
