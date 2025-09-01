@@ -2,11 +2,11 @@
 
 import { signIn } from "next-auth/react";
 
-const handleSeed = async () => {
-  const res = await fetch("/api/seed-users", { method: "POST" });
-  const data = await res.json();
-  console.log(data);
-};
+// const handleSeed = async () => {
+//   const res = await fetch("/api/seed-users", { method: "POST" });
+//   const data = await res.json();
+//   console.log(data);
+// };
 
 export default function LoginPage() {
   return (
