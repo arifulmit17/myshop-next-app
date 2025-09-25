@@ -10,6 +10,9 @@ Setup and installation:
 4. npm run build for production deploy
 5. vercel --prod for deployment
 
+Features:
+1. Next auth login 
+
 Route summery:
 Pages
 •	/ → Landing Page
