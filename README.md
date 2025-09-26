@@ -11,7 +11,8 @@ Setup and installation:
 5. vercel --prod for deployment
 
 Features:
-1. Next auth login 
+1. Next auth login
+2. Admin panel with auth
 
 Route summery:
 Pages
