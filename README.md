@@ -2,17 +2,10 @@ Live link: https://a10-myshop-next-app.vercel.app/
 
 Project description: This is a small tech related ecommerce project built with next.js
 
-Setup and installation: 
-
-1. First install next.js 15,
-2. After that in the app directory create necessary files for project
-3. commit to git repository
-4. npm run build for production deploy
-5. vercel --prod for deployment
-
 Features:
 1. Next auth login
 2. Admin panel with auth
+3. 
 
 Route summery:
 Pages
