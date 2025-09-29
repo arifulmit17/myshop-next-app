@@ -5,7 +5,7 @@ Project description: This is a small tech related ecommerce project built with n
 Features:
 1. Next auth login
 2. Admin panel with auth
-3. 
+3. Details page for products
 
 Route summery:
 Pages
