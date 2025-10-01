@@ -6,6 +6,7 @@ Features:
 1. Next auth login
 2. Admin panel with auth
 3. Details page for products
+4. 
 
 Route summery:
 Pages
